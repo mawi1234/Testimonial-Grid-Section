@@ -1,0 +1,143 @@
+
+/* asterick selects all */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(210, 46%, 95%); /* can use hsl or hex, this is light grayish-blue */
+    font-family: 'Barlow Semi Condensed', sans-serif; /* this connects the font link in our html with our css file so it actually applies to the proj then*/
+}
+
+#testimonial-grid-container {
+    padding: 5% 3%; /* top and bottom padding: 5%, sides padding: 3% */
+}
+
+#testimonial-1 {
+    background-color: hsl(263, 55%, 52%);
+    color: #ffffff;
+    position: relative;
+    z-index: 0;
+}
+
+#testimonial-2 {
+    background-color: hsl(217, 19%, 35%);
+    color: #ffffff;
+}
+#testimonial-3 {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%);
+}
+#testimonial-4 {
+    background-color: hsl(219, 29%, 14%);
+    color: #ffffff;
+}
+#testimonial-5 {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%)
+}
+
+.grid-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px; /* makes rounded corners on the boxes */
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2);
+    font-size: 13px;
+}
+
+.grid-item p{
+    opacity: 70%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;  /* makes space between the main text on the bottom, and the img */
+    z-index: 3;
+    position: relative;
+}
+
+.header .name {
+    opacity: 100%;
+    font-size: 1rem;
+}
+
+.header img {
+    border-radius: 50%;  /* makes profile pic a circle */
+    margin-right: 10px;
+    border: 1px solid hsl(263, 55%, 52%);
+}
+
+.grid-item h4 {
+    margin-bottom: 20px;  /*space between bolded text and paragraph below */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#quote {
+    position: absolute;
+    right: 15%;
+    top: 0;
+    z-index: 1;
+}
+
+@media (min-width: 576px) {  /* breakpoint at 576px, so once the screen is above 576px, it will be considered desktop, put @media at bottom, or else they will be overridden*/
+    #testimonial-grid-container {
+        display: flex;
+        /* max-width: 900px;  no matter how pig the screen is, this container won't get bigger then 750px */
+        max-width: 1440px;
+        margin: 0 auto;  /* centers to the screen */
+        justify-content: space-between;
+
+    }
+
+    #testimonial-5 {
+        flex-basis: 20%;
+    }
+
+    #main-left {
+        display: flex;
+        flex-direction: column; /*main left gets displayed as columns instead of a row */
+        flex-basis: 80%;
+
+    }
+
+    #main-left .grid-item {
+        /* color: red; */
+        margin-right: 15px;   /* makes space in between the 4 boxes, not the last box */
+    }
+
+    #top {
+        display: flex; /*since we put boxes 1 and 2 in a containter called 'top', if we do flex on it, they wull be netxt to each other, same applies to bottom*/
+        flex-basis: 50%;
+        /* justify-content: space-between; */
+    }
+
+    #bottom {
+        display: flex;
+        flex-basis: 50%;
+        /*justify-content: space-between; /* to get space inbetween boxes vertically */
+    }
+
+    #testimonial-1 {
+        flex-basis: 65%;
+    }
+    
+    #testimonial-2 {
+        flex-basis: 35%;
+    }
+    #testimonial-3 {
+        flex-basis: 35%;
+    }
+    #testimonial-4 {
+        flex-basis: 65%;
+    }
+}
+
+/* 
+    - testimonial-grid-container: so you have the main container where all the boxes are
+    - testimonial-1-4 are boxes considered on the left side of the screen, and testimonial-5 is the righ side of the screen, so that it's own container. when we do flex, boxes 1-4 go on left side of screen, and box 5 on right side of screen
+ */
